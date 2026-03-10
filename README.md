@@ -1,5 +1,5 @@
 🚀 Cuda-Content-Architect: Fully Local Edge AI System
-![Execution Proof](./assets/gpu_screenshot.png)
+![Execution Proof](./gpu_screenshot.png)
 
 Cuda-Content-Architect is a high-performance, privacy-first AI multi-agent system designed to transform long-form video intelligence into viral social media assets. Engineered to run 100% locally, it utilizes NVIDIA hardware acceleration to bypass cloud API costs, rate limits, and data privacy concerns.
 
