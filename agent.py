@@ -18,34 +18,34 @@ os.environ["OPENAI_API_KEY"] = "NA"
 # Researcher Agent (Local)
 # ... (LLM और Tool वाला ऊपर का कोड वैसा ही रहेगा) ...
 
-# Researcher Agent (Local)
+# Researcher Agent Update
 researcher = Agent(
     role='Lead Video Researcher',
-    goal='Extract high-impact viral hooks and key business insights from the {youtube_url} transcript.',
+    goal='Extract high-energy hooks and key business insights from {youtube_url}',
     backstory=(
-        'You are an expert content strategist. The video transcript is in Hindi. '
-        'You MUST read the Hindi text, explicitly translate the core business concepts '
-        '(like market penetration and diversification) into English, and summarize them '
-        'accurately in bullet points. DO NOT make up fictional stories about a dentist.'
+        "You are a meticulous data extractor. Your ONLY job is to provide a detailed "
+        "summary of the video transcript. Do not use conversational filler. Just provide "
+        "the facts and insights clearly for the writer to use."
     ),
     allow_delegation=False,
     verbose=True,
     tools=[scraper_tool], 
-    llm=local_llm, 
+    llm=local_llm,
     memory=False
 )
 
-# Writer Agent (Local)
+# Writer Agent Update (The Fix for your specific error)
 writer = Agent(
     role='Social Media Architect',
-    goal='Transform the extracted video insights into 2 professional LinkedIn posts and 1 short Twitter thread.',
+    goal='Draft 5 LinkedIn posts and 2 Twitter threads based on research',
     backstory=(
-        'You are a master copywriter. Write professional, highly engaging content based '
-        'STRICTLY on the researcher\'s notes. Avoid AI clichés. You must complete the task '
-        'and output the final text.'
+        "You are a world-class copywriter. You will be provided with research notes. "
+        "You MUST NOT ask for more information. You MUST NOT say 'I need more notes.' "
+        "Take whatever text you receive and immediately transform it into the required "
+        "social media posts. Output the final posts directly."
     ),
     allow_delegation=False,
     verbose=True,
-    llm=local_llm, 
+    llm=local_llm,
     memory=False
 )

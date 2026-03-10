@@ -24,19 +24,16 @@ content_squad = Crew(
 )
 
 # 3. Kickoff the Workflow
-if __name__ == "__main__":
-    print("🚀 Launching the Agentic Content Squad...")
-    
-    # You can change this URL to any video you want to analyze
-    inputs = {'youtube_url': 'https://youtu.be/Qa_4c9zrxf0?si=Utw-fCuY3vUBe6Vu'}
-    
+# Wrap everything in a function so app.py can call it
+def run_crew(youtube_url):
+    inputs = {
+        'youtube_url': youtube_url
+    }
+    # content_squad is your Crew object
     result = content_squad.kickoff(inputs=inputs)
+    return result
 
-    # 4. Save the Final Output to a file for your portfolio
-    print("\n\n########################")
-    print("## FINAL CONTENT GENERATED ##")
-    print("########################\n")
-    print(result)
-    
-    with open('output/vs_code_output.md', 'w') as f:
-        f.write(str(result))
+# Keep this so you can still run it via terminal if you want
+if __name__ == "__main__":
+    url = "YOUR_TEST_URL"
+    print(run_crew(url))
