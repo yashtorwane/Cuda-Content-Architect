@@ -1,0 +1,16 @@
+# Python virtual environment
+venv/
+.venv/
+env/
+
+# CrewAI & LLM Cache
+.crewai/
+__pycache__/
+*.pyc
+
+# Local Environment Variables
+.env
+
+# OS specific files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,14 @@
+# Core Agentic Framework
+crewai
+
+# Tooling capabilities for agents
+crewai-tools
+
+# YouTube Data Extraction (Strictly v1.2.4+ for modern object-oriented syntax)
+youtube-transcript-api>=1.2.4
+
+# Environment variable management (For handling our dummy API keys)
+python-dotenv
+
+# LiteLLM (Required by CrewAI under the hood to route to your local Ollama server)
+litellm
